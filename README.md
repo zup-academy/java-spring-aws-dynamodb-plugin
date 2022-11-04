@@ -1,4 +1,4 @@
-## Java Spring AWS DynamoDB Plugin
+## Java Spring Data DynamoDB Plugin
 
 The **java-spring-aws-dynamodb-plugin** is a plugin to enable and configure Spring Data DynamoDB in Spring Boot Java application.
 
@@ -34,7 +34,7 @@ git status
 
 Nice! You're ready for production I guess 🥳
 
-[See here the benefits and how you can get the most out of the Java Spring AWS DynamoDB Plugin](http://video-will-be-published.soon/)
+[See here the benefits and how you can get the most out of the Java Spring Data DynamoDB Plugin](http://video-will-be-published.soon/)
 
 ## Support
 
