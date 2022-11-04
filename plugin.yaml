@@ -90,3 +90,34 @@ hooks:
   - type: render-templates
     trigger: after-render
     path: snippets/docker-localstack
+
+  ##
+  # Spring Boot Application class
+  ##
+  - type: edit
+    path: "{{application_class_source_file_path}}"
+    trigger: after-render
+    changes:
+      - search:
+          string: "import org.springframework.boot.SpringApplication;"
+          insert-before:
+            value: |
+              import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+              import org.springframework.context.annotation.FilterType;
+              import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
+              import static org.springframework.context.annotation.ComponentScan.Filter;
+               
+      - search:
+          string: "@SpringBootApplication"
+          insert-before:
+            value: |
+              /**
+               * Ignores DynamoDB Repositories when scanning for JPA Repositories
+               * 
+               * IMPORTANT: if you don't use Spring Data JPA you can remove this code, or, 
+               *            if necessary, you can adapt it to your project.
+               */
+              @EnableJpaRepositories(excludeFilters = {
+                  @Filter(type = FilterType.ANNOTATION, classes = { EnableScan.class })
+              })
+              
