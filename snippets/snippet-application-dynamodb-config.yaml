@@ -1,0 +1,16 @@
+
+##
+# AWS DynamoDB Configuration
+##
+amazon:
+    aws:
+        dynamodb:
+            endpoint: http://localhost:4566
+            region: sa-east-1
+            accessKey: localstackAccessKeyId
+            secretKey: localstackSecretAccessKey
+
+logging:
+    level:
+        org.socialsignin.spring.data.dynamodb: debug
+        org.apache.http.wire: debug

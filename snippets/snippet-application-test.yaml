@@ -1,0 +1,8 @@
+    ##
+    # Spring Data DynamoDB
+    # https://github.com/derjust/spring-data-dynamodb/wiki/Autocreate-Tables
+    ##
+    data:
+        dynamodb:
+            entity2ddl:
+                auto: none
